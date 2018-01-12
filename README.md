@@ -37,7 +37,7 @@ Here is how the **Automatic Cluedo Machine** looks like:
 
 ![Automatic Cluedo Machine](photos/automatic_cluedo_machine.png)
 
-Try it out at https://therealsaumil.github.io/cluedo-game/cluedo.html
+Try out the [**Automatic Cluedo Machine**](https://therealsaumil.github.io/cluedo-game/cluedo.html) here.
 
 For a quick test, cut and paste the commands from the following sample games data:
 
