@@ -46,3 +46,5 @@ For a quick test, cut and paste the commands from the following sample games dat
 [Sample Game 2](sample_games/game4_commands.txt)
 
 [Sample Game 3](sample_games/game6_commands.txt)
+
+[Sample Game 4](sample_games/game7_commands.txt)
