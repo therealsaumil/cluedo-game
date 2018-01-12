@@ -1,0 +1,98 @@
+/* Game 7 */
+
+set players Samyaka Saumil Kruti Nirav Jaimin;
+i am Saumil;
+assign person Plum Jaimin;
+assign person Nirav Green;
+assign person Mustard Saumil;
+assign person Scarlett Samyaka;
+assign person Green Nirav;
+assign person White Kruti;
+i have Study;
+i have BilliardRoom;
+i have Spanner;
+i have Plum;
+begin play;
+
+enter room Jaimin Study;
+query by Jaimin Peacock Revolver Study;
+response by Samyaka;
+
+enter room Saumil DiningRoom;
+query by Saumil Scarlett Dagger DiningRoom;
+response by Kruti Dagger;
+
+enter room Kruti Ballroom;
+query by Kruti Ballroom Peacock LeadPipe;
+response by Nirav;
+
+enter room Nirav BilliardRoom;
+query by Nirav BilliardRoom Spanner Mustard;
+response by Saumil Spanner;
+
+enter room Jaimin Kitchen;
+query by Jaimin Kitchen Mustard LeadPipe;
+response by Kruti;
+
+query by Samyaka DiningRoom Candlestick Mustard;
+response by Kruti;
+
+query by Saumil DiningRoom Mustard LeadPipe;
+response by Kruti Mustard;
+
+query by Kruti Ballroom Green Revolver;
+response by Jaimin;
+
+query by Nirav Ballroom Dagger Plum;
+response by Jaimin;
+
+enter room Jaimin Kitchen;
+query by Jaimin Kitchen LeadPipe Plum;
+response by Saumil Plum;
+
+query by Samyaka DiningRoom White Candlestick;
+response by Kruti;
+
+enter room Saumil Hall;
+query by Saumil Hall Green Revolver;
+response by Jaimin Hall;
+
+query by Kruti DiningRoom Plum LeadPipe;
+response by Saumil Plum;
+
+query by Nirav Hall LeadPipe Scarlett;
+response by Jaimin;
+
+query by Jaimin DiningRoom Peacock LeadPipe;
+response by Nirav;
+
+enter room Samyaka Ballroom;
+query by Samyaka Ballroom LeadPipe Peacock;
+response by Nirav;
+
+enter room Saumil Library;
+query by Saumil Library Spanner Green;
+response by Nirav Library;
+
+query by Kruti DiningRoom White Dagger;
+response passed;
+
+enter room Nirav Lounge;
+query by Nirav Lounge Green Dagger;
+response by Jaimin;
+
+query by Jaimin DiningRoom White LeadPipe;
+response by Kruti;
+
+query by Samyaka Ballroom Spanner Green;
+response by Saumil Spanner;
+
+enter room Saumil BilliardRoom;
+query by Saumil BilliardRoom Spanner Green;
+response by Jaimin Green;
+
+query by Kruti DiningRoom Plum LeadPipe;
+response by Saumil Plum;
+
+query by Samyaka Ballroom LeadPipe Green;
+response by Jaimin;
