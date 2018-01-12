@@ -1,0 +1,83 @@
+html {
+   width: 100%;
+   font-family: Helvetica, Arial, Open Sans, sans-serif;
+   font-size: 10pt;
+}
+span {display: block;}
+div {
+   display: block;
+   padding: 5px;
+}
+table {
+   table-layout: fixed;
+   width: 100%;
+   padding: 1px;
+}
+input,textarea {
+   border: 1px solid lightgrey;
+   font-family: Helvetica, Arial, Open Sans, sans-serif;
+   font-size: 12pt;
+   padding: 5px;
+}
+.inline {
+   display: inline-block;
+}
+.greyedout {
+   color: LightGrey;
+}
+.orange {
+   color: Orange;
+}
+.darkorange {
+   color: LightCoral;
+}
+.red {
+   color: Red;
+}
+.h2 {
+   font-size: 14pt;
+   font-weight: bold;
+}
+.h3 {
+   font-size: 12pt;
+   font-weight: bold;
+}
+.full {width: 100%;}
+.fifty {width: 50%;}
+.sixty {width: 60%;}
+.seventy {width: 70%;}
+.ninety {width: 90%;}
+.main {
+   float: left;
+   width: 50%;
+}
+.tuple {
+   float: left;
+   width: 50%;
+}
+.marked {
+   color: RoyalBlue;
+}
+.confirmed {
+   color: OrangeRed;
+}
+.highlight {
+   background-color: Yellow;
+}
+.goldenyellow {
+   background-color: Gold;
+   text-align: center;
+}
+.background-orange {
+   background-color: Orange;
+   text-align: center;
+}
+.autoresizeimage {
+   max-width: 100%;
+   height: auto;
+   width: 100%;
+}
+.logo {
+   float: left;
+   margin-right: 5px;
+}

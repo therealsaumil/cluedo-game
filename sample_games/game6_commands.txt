@@ -1,0 +1,129 @@
+/* Game 6 */
+set players Shubham Saumil Kruti Shradha Serena;
+I am Saumil;
+I have Scarlett;
+I have Rope;
+I have Spanner;
+I have Lounge;
+assign person Scarlett Saumil;
+assign person White Kruti;
+assign person Green Shradha;
+assign person Peacock Serena;
+assign person Plum Shubham;
+begin play;
+
+enter room Serena BilliardRoom;
+query by Serena BilliardRoom Mustard Rope;
+response by Saumil Rope;
+
+enter room Serena Library;
+query by Serena Library Plum Revolver;
+response by Shubham;
+
+enter room Shubham Hall;
+query by Shubham Hall Scarlett Spanner;
+response by Saumil Spanner;
+
+enter room Saumil Lounge;
+query by Saumil Lounge Green Dagger;
+response by Shradha Dagger;
+
+enter room Kruti Ballroom;
+query by Kruti Ballroom Scarlett Revolver;
+response by Saumil Scarlett;
+
+enter room Shradha DiningRoom;
+query by Shradha DiningRoom Mustard Rope;
+response by Serena;
+
+enter room Serena Study;
+query by Serena Study Scarlett Revolver;
+response by Saumil Scarlett;
+
+enter room Saumil Conservatory;
+query by Saumil Conservatory Peacock Rope;
+response by Kruti Peacock;
+
+query by Kruti Ballroom Mustard Rope;
+response by Serena;
+
+query by Shradha DiningRoom Scarlett Spanner;
+response by Saumil Spanner;
+
+enter room Serena Lounge;
+query by Serena Lounge White Spanner;
+response by Saumil Spanner;
+
+enter room Shubham Conservatory;
+query by Shubham Conservatory Plum Revolver;
+response by Shradha;
+
+query by Saumil DiningRoom White Spanner;
+response by Kruti DiningRoom;
+
+query by Kruti DiningRoom Green Spanner;
+response by Shubham;
+
+enter room Shradha Hall;
+query by Shradha Hall Green LeadPipe;
+response by Serena;
+
+enter room Serena DiningRoom;
+query by Serena DiningRoom Green Revolver;
+response by Shubham;
+
+enter room Saumil Ballroom;
+query by Saumil Ballroom Plum Spanner;
+response by Kruti Ballroom;
+
+enter room Kruti Conservatory;
+query by Kruti Conservatory Plum Candlestick;
+response by Shradha;
+
+enter room Shradha Lounge;
+query by Shradha Lounge White Revolver;
+response by Saumil Lounge;
+
+enter room Serena Lounge;
+query by Serena Lounge Peacock Revolver;
+response by Saumil Lounge;
+
+enter room Shubham Lounge;
+query by Shubham Lounge White Dagger;
+response by Saumil Lounge;
+
+enter room Saumil Kitchen;
+query by Saumil Kitchen White Spanner;
+response by Shubham Kitchen;
+
+enter room Shradha Conservatory;
+query by Shradha Conservatory White Revolver;
+response by Serena;
+
+enter room Serena DiningRoom;
+query by Serena DiningRoom White Revolver;
+response by Kruti;
+
+enter room Shubham Hall;
+query by Shubham Hall White Revolver;
+response by Serena;
+
+enter room Saumil Study;
+query by Saumil Study Scarlett Rope;
+response by Shradha Study;
+
+enter room Kruti Library;
+query by Kruti Library White Rope;
+response by Shubham;
+
+enter room Shradha Library;
+query by Shradha Library Peacock Rope;
+response by Shubham;
+
+enter room Serena BilliardRoom;
+query by Serena BilliardRoom White Revolver;
+response passed;
+
+enter room Shubham Library;
+query by Shubham Library White Revolver;
+response passed;

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- Cluedo engine, programmed by Saumil Shah -->
+<html>
+<head>
+   <script src="cluedo.js"></script>
+   <link rel="stylesheet" type="text/css" href="cluedo.css" />
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+</head>
+<body onload="init()">
+   <div class="fifty">
+      <span class="logo">
+         <img src="cluedo_logo.png">
+      </span>
+      <span>
+         <input class="seventy" type="text" id="command">
+         <input type="button" id="run" value="GO">
+      </span>
+   </div>
+   <div class="full" id="row_of_cards"></div>
+   <div class="full">
+      <span class="main">
+         <div>
+            <span class="h2" style="display: inline;">Command History</span>
+            <span style="display: inline;">
+               slow motion
+               <input type="checkbox" id="slowmotion" checked>
+            </span>
+         </div>
+         <div>
+            <textarea class="ninety" id="command_history">
+            </textarea>
+         </div>
+         <div class="h2">Probability Table</div>
+         <div id="probability_table" class="ninety"></div>
+         <div class="h2">Query History</div>
+         <div id="query_history" class="ninety"></div>
+      </span>
+      <span class="tuple">
+         <div class="h2">Best Possible Query</div>
+         <div id="sort">
+            SORT BY likelihood of
+            <input type="radio" name="sort_by" id="pass" value="passing">
+            Passing
+            <input type="radio" name="sort_by" id="respond" value="responding">
+            Responding
+            <input type="radio" name="sort_by" id="murder" value="murder">
+            Murder Card Only
+            |
+            LEGEND:
+            <span style="display: inline;" class="darkorange">[current room]</span>
+            <span style="display: inline;" class="orange">[candidate queries]</span>
+         </div>
+         <div id="tuple_list"></div>
+      </span>
+   </div>
+</body>
+</html>
