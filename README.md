@@ -41,4 +41,8 @@ Try it out at https://therealsaumil.github.io/cluedo-game/cluedo.html
 
 For a quick test, cut and paste the commands from the following sample games data:
 
-[Sample Game 1](sample_games/game3_commands.txt)[Sample Game 2](sample_games/game4_commands.txt)[Sample Game 3](sample_games/game6_commands.txt)
+[Sample Game 1](sample_games/game3_commands.txt)
+
+[Sample Game 2](sample_games/game4_commands.txt)
+
+[Sample Game 3](sample_games/game6_commands.txt)
