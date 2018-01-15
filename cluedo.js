@@ -394,7 +394,7 @@ function setup_command_table() {
 // can submit a semicolon separated list of multiple commands
 // useful especially when testing an entire game script
 function parser(command_string) {
-   var command_list = command_string.replace(/\s*\/\*.*\*\/\s*/g, "")
+   var command_list = command_string.replace(/\s*\/\*[^\*]*\*\/\s*/g, "")
                                     .replace(/\s*;\s+/g, ";")
                                     .replace(/;+/g, ";")
                                     .replace(/\s+/g, " ")
@@ -445,6 +445,7 @@ var run_single_command = function(command_string) {
             response = command_function();
          }
          if(commands[i][4]) {
+            // if the command has to be recorded in the command history
             add_command_history(commands[i][0], params, response);
          }
          return;
@@ -459,9 +460,10 @@ function add_command_history(command, params, response) {
    if(params != "") {
       command_string += " " + params;
    }
+   command_string += " /* " + response + " */";
    command_stack.push(command_string);
    // record the command in the history box
-   textarea.value = command_string + " [" + response + "]\n" + textarea.value;
+   textarea.value = command_string + "\n" + textarea.value;
    last_command = command_stack.length;
 }
 
@@ -699,10 +701,12 @@ function recalc_tuple_probabilities() {
       }
 
       // if I have asked this query before, it's stupid of me to ask it
-      // again
+      // again [THIS CASE SHOULD NEVER HAPPEN]
+      /*
       if(tuples[i].asked_by == me) {
          tuples[i].eliminated = true;
       }
+      */
 
       // find the likelihood of player[x] passing to the query
       // where x != me
@@ -1028,69 +1032,107 @@ var cmd_print_tuples = function() {
 
    table.appendChild(header_row);
 
-   for(var i = 0; i < tuples.length; i++) {
-      var tr = document.createElement("tr");
-      tr.appendChild(make_cell(persons[tuples[i].person] + " (" +
-                               cards[get_person(tuples[i].person)].queried +
-                               ")"));
-      tr.appendChild(make_cell(weapons[tuples[i].weapon] + " (" +
-                               cards[get_weapon(tuples[i].weapon)].queried +
-                               ")"));
-      var td_room = make_cell(rooms[tuples[i].room] + " (" +
-                              cards[get_room(tuples[i].room)].queried + ")");
+   // if I am in a room, then the table must first show all the
+   // tuples corresponding to that room, and then the remaining
+   // tuples.
 
-      // colour the room dark orange if we are in it
-      if(me != -1 && players[me].room == tuples[i].room &&
-         !tuples[i].eliminated) {
-         td_room.className = "darkorange";
-      }
+   if(me != -1 && players[me].room != -1) {
+      // I am in a room. First print the list of tuples
+      // that match my room and are not eliminated
+      // and then print the remaining tuples
 
-      tr.appendChild(td_room);
-
-      var weight_value, show_pass;
-      switch(tuple_sort) {
-         case sort_by_passing:
-            weight_value = tuples[i].pass_weight.toFixed(2);
-            break;
-         case sort_by_responding:
-            weight_value = tuples[i].show_weight.toFixed(2);
-            break;
-         default:
-            weight_value = tuples[i].murder_weight.toFixed(2);
-      }
-      tr.appendChild(make_cell(weight_value));
-
-      p = get_next_responder(me);
-      while(me != -1 && p != me) {
-         if(tuple_sort == sort_by_passing) {
-            show_pass = tuples[i].pass_probability[p].toFixed(2);
-         }
-         else {
-            show_pass = tuples[i].show_probability[p].toFixed(2);
-         }
-         tr.appendChild(make_cell(show_pass));
-         p = get_next_responder(p);
-      }
-
-      // if the tuple is eliminated, show it with a strikethrough
-      if(tuples[i].eliminated) {
-         tr.className = "greyedout";
-      }
-
-      // if the tuple is a candidate tuple, set its text to orange
-      if(tuples[i].candidate) {
-         if(tuples[i].asked_by != -1) {
-            tr.className = "red";
-         }
-         else {
-            tr.className = "orange";
+      // first loop to only print non eliminated tuples matching my room
+      for(var i = 0; i < tuples.length; i++) {
+         // check if we are in the same room as the ith tuple's room
+         if(me != -1 && players[me].room == tuples[i].room &&
+            !tuples[i].eliminated) {
+            prepare_ith_row(i, true, table);
          }
       }
 
-      table.appendChild(tr);
+      // second loop to print the remaining tuples
+      for(var i = 0; i < tuples.length; i++) {
+         // check if we are in the same room as the ith tuple's room
+         if(!(me != -1 && players[me].room == tuples[i].room &&
+            !tuples[i].eliminated)) {
+            prepare_ith_row(i, false, table);
+         }
+      }
+
+      output.appendChild(table);
    }
-   output.appendChild(table);
+   else {
+      // I am not in a room, print the tuple table normally
+      for(var i = 0; i < tuples.length; i++) {
+         prepare_ith_row(i, false, table);
+      }
+      output.appendChild(table);
+   }
+
    return("OK");
+}
+
+// prepare ith row of the tuple table
+var prepare_ith_row = function(i, is_this_my_room, table) {
+   var tr = document.createElement("tr");
+
+   tr.appendChild(make_cell(persons[tuples[i].person] + " (" +
+                            cards[get_person(tuples[i].person)].queried +
+                            ")"));
+   tr.appendChild(make_cell(weapons[tuples[i].weapon] + " (" +
+                            cards[get_weapon(tuples[i].weapon)].queried +
+                            ")"));
+   var td_room = make_cell(rooms[tuples[i].room] + " (" +
+                           cards[get_room(tuples[i].room)].queried + ")");
+
+   // colour the room dark orange if we are in it
+   if(is_this_my_room) {
+      td_room.className = "darkorange";
+   }
+
+   tr.appendChild(td_room);
+
+   var weight_value, show_pass;
+   switch(tuple_sort) {
+      case sort_by_passing:
+         weight_value = tuples[i].pass_weight.toFixed(2);
+         break;
+      case sort_by_responding:
+         weight_value = tuples[i].show_weight.toFixed(2);
+         break;
+      default:
+         weight_value = tuples[i].murder_weight.toFixed(2);
+   }
+   tr.appendChild(make_cell(weight_value));
+
+   var p = get_next_responder(me);
+   while(me != -1 && p != me) {
+      if(tuple_sort == sort_by_passing) {
+         show_pass = tuples[i].pass_probability[p].toFixed(2);
+      }
+      else {
+         show_pass = tuples[i].show_probability[p].toFixed(2);
+      }
+      tr.appendChild(make_cell(show_pass));
+      p = get_next_responder(p);
+   }
+
+   // if the tuple is eliminated, show it with a strikethrough
+   if(tuples[i].eliminated) {
+      tr.className = "greyedout";
+   }
+
+   // if the tuple is a candidate tuple, set its text to orange
+   if(tuples[i].candidate) {
+      if(tuples[i].asked_by != -1) {
+         tr.className = "red";
+      }
+      else {
+         tr.className = "orange";
+      }
+   }
+
+   table.appendChild(tr);
 }
 
 // print the probability table

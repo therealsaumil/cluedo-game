@@ -1,9 +1,9 @@
 /* Game 7 */
+/* The first game to be played by the Cluedo Machine against other human players */
 
 set players Samyaka Saumil Kruti Nirav Jaimin;
 i am Saumil;
 assign person Plum Jaimin;
-assign person Nirav Green;
 assign person Mustard Saumil;
 assign person Scarlett Samyaka;
 assign person Green Nirav;
