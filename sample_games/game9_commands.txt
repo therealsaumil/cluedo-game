@@ -11,131 +11,131 @@ assign person Green Shradha;
 assign person Plum Saumil;
 begin play;
 
-enter room Mrinalini Lounge;
+enter room Mrinalini Lounge; /* 1 */
 query by Mrinalini Lounge Mustard Dagger;
 response by Shradha;
 
-enter room Mrinalini Conservatory;
+enter room Mrinalini Conservatory; /* 2 */
 query by Mrinalini Conservatory Peacock LeadPipe;
 response by Saumil Peacock;
 
-enter room Shradha Ballroom;
+enter room Shradha Ballroom; /* 3 */
 query by Shradha Ballroom White LeadPipe;
 response by Saumil LeadPipe;
 
-enter room Saumil Study;
+enter room Saumil Study; /* 4 */
 query by Saumil Study Green Revolver;
 response by Mrinalini Revolver;
 
-enter room Samriddhi Lounge;
+enter room Samriddhi Lounge; /* 5 */
 query by Samriddhi Lounge Scarlett Candlestick;
 response by Shradha;
 
-enter room Mrinalini Conservatory;
+enter room Mrinalini Conservatory; /* 6 */
 query by Mrinalini Conservatory Mustard LeadPipe;
 response by Saumil LeadPipe;
 
-enter room Shradha Kitchen;
+enter room Shradha Kitchen; /* 7 */
 query by Shradha Kitchen Mustard Spanner;
 response by Samriddhi;
 
-enter room Saumil Kitchen;
+enter room Saumil Kitchen; /* 8 */
 query by Saumil Kitchen Peacock Dagger;
 response by Samriddhi Kitchen;
 
-enter room Samriddhi Ballroom;
+enter room Samriddhi Ballroom; /* 9 */
 query by Samriddhi Ballroom White Dagger;
 response by Mrinalini;
 
-enter room Mrinalini BilliardRoom;
+enter room Mrinalini BilliardRoom; /* 10 */
 query by Mrinalini BilliardRoom Mustard Rope;
 response by Saumil BilliardRoom;
 
-enter room Shradha Study;
+enter room Shradha Study; /* 11 */
 query by Shradha Study Peacock Rope;
 response by Saumil Peacock;
 
-enter room Saumil Study;
+enter room Saumil Study; /* 12 */
 query by Saumil Study Scarlett Candlestick;
 response by Samriddhi Scarlett;
 
-enter room Samriddhi BilliardRoom;
+enter room Samriddhi BilliardRoom; /* 13 */
 query by Samriddhi BilliardRoom Green LeadPipe;
 response by Shradha;
 
-enter room Mrinalini Kitchen;
+enter room Mrinalini Kitchen; /* 14 */
 query by Mrinalini Kitchen Green Candlestick;
 response by Shradha;
 
-enter room Shradha Study;
+enter room Shradha Study; /* 15 */
 query by Shradha Study Scarlett Spanner;
 response by Saumil Study;
 
-enter room Saumil Library;
+enter room Saumil Library; /* 16 */
 query by Saumil Library Plum Rope;
 response by Samriddhi Library;
 
-enter room Samriddhi BilliardRoom;
+enter room Samriddhi BilliardRoom; /* 17 */
 query by Samriddhi BilliardRoom Plum Dagger;
 response by Mrinalini;
 
-enter room Mrinalini Kitchen;
+enter room Mrinalini Kitchen; /* 18 */
 query by Mrinalini Kitchen Rope Scarlett;
 response by Samriddhi;
 
-enter room Shradha Kitchen;
+enter room Shradha Kitchen; /* 19 */
 query by Shradha Kitchen Rope Plum;
 response by Samriddhi;
 
-enter room Saumil Study;
+enter room Saumil Study; /* 20 */
 query by Saumil Study Rope Plum;
 response by Mrinalini Plum;
 
-enter room Samriddhi BilliardRoom;
+enter room Samriddhi BilliardRoom; /* 21 */
 query by Samriddhi BilliardRoom Rope Mustard;
 response by Saumil BilliardRoom;
 
-enter room Mrinalini Study;
+enter room Mrinalini Study; /* 22 */
 query by Mrinalini Study Rope Green;
 response by Shradha;
 
-enter room Shradha Library;
+enter room Shradha Library; /* 23 */
 query by Shradha Library Revolver Plum;
 response by Samriddhi;
 
-enter room Saumil Study;
+enter room Saumil Study; /* 24 */
 query by Saumil Study LeadPipe Mustard;
 response passed;
 
-enter room Samriddhi Study;
+enter room Samriddhi Study; /* 25 */
 query by Samriddhi Study Dagger Mustard;
 response by Shradha;
 
-enter room Mrinalini Study;
+enter room Mrinalini Study; /* 26 */
 query by Mrinalini Study Rope Mustard;
 response by Saumil Study;
 
-enter room Samriddhi Study;
+enter room Samriddhi Study; /* 27 */
 query by Samriddhi Study Rope Mustard;
 response by Saumil Study;
 
-enter room Mrinalini Ballroom;
+enter room Mrinalini Ballroom; /* 28 */
 query by Mrinalini Ballroom Rope Mustard;
 response by Saumil Ballroom;
 
-enter room Lounge Shradha;
+enter room Shradha Lounge; /* 29 */
 query by Shradha Lounge Spanner Plum;
 response by Mrinalini;
 
-enter room Saumil DiningRoom;
+enter room Saumil DiningRoom; /* 30 */
 query by Saumil DiningRoom Peacock LeadPipe;
 response by Samriddhi DiningRoom;
 
-enter room Samriddhi Lounge;
+enter room Samriddhi Lounge; /* 31 */
 query by Samriddhi Lounge Rope Mustard;
 response passed;
 
-enter room Mrinalini Conservatory;
+enter room Mrinalini Conservatory; /* 32 */
 query by Mrinalini Conservatory Rope Mustard;
 response by Samriddhi;
 
